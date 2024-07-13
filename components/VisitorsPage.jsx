@@ -10,7 +10,7 @@ function VisitorsPage() {
           title: "Breakdown by Visitor Interaction",
           items: detailed.interactionBreakdown,
         }}
-        showCategoryBar={false}
+        showCategoryBar={true}
       />
       <Breakdown
         data={{
