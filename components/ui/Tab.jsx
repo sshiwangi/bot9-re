@@ -37,15 +37,18 @@ function Tab({
   const isPercentagePositive = parseFloat(percentChange) >= 100;
 
   const renderPercentageChange = () => (
-    <div className="text-500 flex items-center gap-2">
-      <div className="ml-2 text-white p-1 rounded">
-        {isPercentagePositive ? (
-          <TriangleIcon color="green" />
-        ) : (
-          <TriangleIcon color="red" rotate={true} />
-        )}
-      </div>
-      <p className="font-[20px]"> {percentChange}%</p>
+    <div className=" flex items-center gap-2">
+      {isPercentagePositive ? (
+        <TriangleIcon color="green" />
+      ) : (
+        <TriangleIcon color="red" rotate={true} />
+      )}
+
+      {isPercentagePositive ? (
+        <p className="text-[12px] font-600 text-green-500"> {percentChange}%</p>
+      ) : (
+        <p className="text-[12px] font-600 text-red-500"> {percentChange}%</p>
+      )}
     </div>
   );
 
@@ -61,7 +64,9 @@ function Tab({
           <div className="font-[500] text-gray-600 text-[16px]">{tabName}</div>
         </div>
         <div className="flex gap-2 items-center">
-          <div className="text-[32px] font-[500]">{value}</div>
+          <div>
+            <div className="text-[32px] font-[500]">{value}</div>
+          </div>
           {renderPercentageChange()}
         </div>
       </div>
@@ -75,10 +80,10 @@ function Tab({
               <Support />
             </div>
           </Tooltip>
-          <div className="font-medium text-gray-600 text-lg">{tabName}</div>
+          <div className="font-[500] text-gray-600 text-[16px]">{tabName}</div>
         </div>
         <div className="flex gap-2 items-center">
-          <div className="text-3xl font-bold">{value}</div>
+          <div className="text-[32px] font-[500]">{value}</div>
           {renderPercentageChange()}
         </div>
       </div>
